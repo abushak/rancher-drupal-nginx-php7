@@ -59,6 +59,12 @@ RUN cd /usr/local/bin/ && \
     curl https://drupalconsole.com/installer -L -o drupal && \
     chmod +x drupal
 
+ENV DB_USER drupal_admin
+ENV DB_PASSWORD smileme89101
+ENV DB_DB_NAME drupal
+
+
+
 # Required for drush, convenience utilities, etc.
 RUN apt-get update && \
     DEBIAN_FRONTEND="noninteractive" apt-get install --yes \
